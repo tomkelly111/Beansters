@@ -1,0 +1,1 @@
+web: gunicorn beansters.wsgi
