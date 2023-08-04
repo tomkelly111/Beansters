@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import CoffeeShopPost
 
+
 @admin.register(CoffeeShopPost)
 class PostAdmin(admin.ModelAdmin):
     search_fields = ['shop']

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 # Create your models here.
 
+
 class CoffeeShopPost(models.Model):
     shop = models.CharField(max_length=50, unique=True)
     description = models.CharField(max_length=150)
@@ -16,3 +17,4 @@ class CoffeeShopPost(models.Model):
 
     def __str__(self):
         return self.shop
+        
