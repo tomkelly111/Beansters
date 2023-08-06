@@ -1,92 +1,45 @@
-
 {% extends "base.html" %}
 
 {% block content %}
-        <!-- Posts -->
-        <section class="coffeeshopposts">
-            <div class="card-deck">
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Couple of Mugs</h5>
-                    <p class="card-text">Nice shop with good toasties!</p>
-                    <p class="card-text"><small class="text-muted">Nephin Road</small></p>
-                    <button type="button" class="btn btn-secondary btn-sm" href="#" role="button">Read reviews...</button>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Dash</h5>
-                    <p class="card-text">Container turned coffee shop, near the park.</p>
-                    <p class="card-text"><small class="text-muted"> Hole in the Wall, Blackhorse Ave</small></p>
-                    <button type="button" class="btn btn-secondary btn-sm" href="#" role="button">Read reviews...</button>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="..." class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Kaph</h5>
-                    <p class="card-text">The best oat flat whites in Dublin!</p>
-                    <p class="card-text"><small class="text-muted">Drury Street</small></p>
-                    <button type="button" class="btn btn-secondary btn-sm" href="#" role="button">Read reviews...</button>
-                  </div>
-                </div>
-              </div>
-
-        </section>
-    </article>
-
-    <div class="container-fluid">
-      <div class="row">
-  
-          <!-- Blog Entries Column -->
-          <div class="col-12 mt-3 left">
-              <div class="row">
-                  {% for post in object_list %}
-                  <div class="col-md-4">
-                      <div class="card mb-4">
-                          <div class="card-body">
-                              <div class="image-container">
-                                  {% if "placeholder" in post.featured_image.url %}
-                                  <img class="card-img-top"
-                                      src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                                  {% else %}
-                                  <img class="card-img-top" src=" {{ post.featured_image.url }}">
-                                  {% endif %}
-                                  <div class="image-flash">
-                                      <p class="author">Posted by: {{ post.author }}</p>
-                                  </div>
-                              </div>
-                              <a href="#" class="post-link">
-                                  <h2 class="card-title">{{ post.shop }}</h2>
-                                  <p class="card-text">{{ post.description }}</p>
-                              </a>
-                              <hr />
-                          </div>
-                      </div>
-                  </div>
-                  {% if forloop.counter|divisibleby:3 %}
-              </div>
-              <div class="row">
-                  {% endif %}
-                  {% endfor %}
-  
-              </div>
-          </div>
+<!-- Posts -->
+<section class="coffeeshopposts">
+  <div class="card-deck">
+    {% for post in object_list %}
+      <div class="card">
+        {% if "placeholder" in post.featured_image.url %}
+          <img class="card-img-top"
+            src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600">
+          {% else %}
+          <img class="card-img-top" src=" {{ post.featured_image.url }}">
+          {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          <p class="card-text">{{ post.description }}</p>
+          <p class="card-text"><small class="text-muted">Location</small></p>
+          <p class="author">Posted By: {{ post.author }}</p>
+          <button type="button" class="btn btn-secondary btn-sm" href="#" role="button">Read reviews...</button>
+        </div>
       </div>
-      {% if is_paginated %}
-      <nav aria-label="Page navigation">
-          <ul class="pagination justify-content-center">
-              {% if page_obj.has_previous %}
-              <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-              {% endif %}
-              {% if page_obj.has_next %}
-              <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-  
-              {% endif %}
-          </ul>
-      </nav>
+      {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class="row">
       {% endif %}
-  </div>
+      {% endfor %} 
+    </div>
+</section>
+
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+    {% if page_obj.has_previous %}
+    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+    {% endif %}
+  </ul>
+</nav>
+{% endif %}
+</div>
 {% endblock %}
