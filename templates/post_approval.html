@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="alert alert-secondary" role="alert">
+        Thanks for submitting a Coffee Shop. Your post is awaiting approval. Click <a href="{% url 'home' %}" class="alert-link"> here</a> to go home.
+    </div>
+</div>
+{% endblock %}
