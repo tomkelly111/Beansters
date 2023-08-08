@@ -5,7 +5,7 @@
 <section class="coffeeshopposts">
   <div class="card-deck">
     {% for post in object_list %}
-      <div class="card">
+      <div class="card m-4">
         {% if "placeholder" in post.featured_image.url %}
           <img class="card-img-top"
             src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600">
@@ -13,7 +13,7 @@
           <img class="card-img-top" src=" {{ post.featured_image.url }}">
           {% endif %}
         <div class="card-body">
-          <h5 class="card-title">{{ post.title }}</h5>
+          <h5 class="card-title">{{ post.shop }}</h5>
           <p class="card-text">{{ post.description }}</p>
           <p class="card-text"><small class="text-muted">Location</small></p>
           <p class="author">Posted By: {{ post.author }}</p>
