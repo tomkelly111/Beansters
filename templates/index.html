@@ -17,7 +17,7 @@
           <p class="card-text">{{ post.description }}</p>
           <p class="card-text"><small class="text-muted">Location</small></p>
           <p class="author">Posted By: {{ post.author }}</p>
-          <button type="button" class="btn btn-secondary btn-sm" href="#" role="button">Read reviews...</button>
+          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'post_detail' shop=post.shop %}" role="button">Read reviews...</a>
         </div>
       </div>
       {% if forloop.counter|divisibleby:3 %}

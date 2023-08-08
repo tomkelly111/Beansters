@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        {% if "placeholder" in post.featured_image.url %}
+          <img class="card-img-top"
+            src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600">
+          {% else %}
+          <img class="card-img-top" src=" {{ post.featured_image.url }}">
+          {% endif %}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ post.shop }}</h5>
+      <p class="card-text">{{ post.description }}</p>
+    </div>
+  </div>
+{% endblock %}
