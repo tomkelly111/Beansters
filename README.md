@@ -7,7 +7,12 @@ admin.py - https://stackoverflow.com/questions/28512710/how-to-add-custom-search
     search_fields = ['shop']
 )
 
+photo - https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600
 
+
+to be addressed : slug field in model, debug=true, form resubmits on page refresh
+
+class comments and class reply taken fromhttps://www.youtube.com/watch?v=ScABStHY8cc&t=5s
 
 
 
