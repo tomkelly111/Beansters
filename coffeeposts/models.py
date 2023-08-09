@@ -11,6 +11,7 @@ class CoffeeShopPost(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     featured_image = CloudinaryField('image', default='placeholder')
     approved = models.BooleanField(default=False)
+    location = models.CharField(max_length=150, default='')
 
     class Meta:
         ordering = ['-created_on']
