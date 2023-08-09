@@ -22,6 +22,7 @@ class PostDetail(View):
                     "post": post,
                     "commented": False,
                     "shop": shop,
+                    "comments": comments,
                     "comment_form": CommentForm()
                 }
             )
@@ -51,6 +52,7 @@ class PostDetail(View):
                 "post": post,
                 "commented": True,
                 "shop": shop,
+                "comments": comments,
                 "comment_form": CommentForm()
             }
         )
