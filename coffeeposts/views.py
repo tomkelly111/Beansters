@@ -59,7 +59,7 @@ def post_approval_view(request):
     return render(request, 'post_approval.html')
 
 def edit_post_view(request):
-    return render(request, 'edit_post.html')
+    return render(request, 'edit_post.html') # maybe can be deleted
 
 def create_coffee_shop_post(request):
     if request.method == 'POST':
@@ -87,3 +87,13 @@ def edit_post(request, post_id):
             return redirect('post_approval')
     form = PostForm(instance=post_to_edit)
     return render(request, 'edit_post.html', {'form': form})
+
+
+def post_deleted(request):
+    return render(request, 'post_deleted.html')
+
+def delete_post(request, post_id):
+    post = get_object_or_404(CoffeeShopPost, id=post_id)
+    post.delete()
+    return redirect('post_deleted')
+
