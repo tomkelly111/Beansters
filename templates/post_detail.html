@@ -16,7 +16,7 @@
       <h5 class="card-title">{{ post.shop }}</h5>
       <p class="card-text">{{ post.description }}</p>
       <div>
-        <a href="{% url 'edit_post' %}">
+        <a href="/edit/{{ post.id }}">
           <button>Edit Post </button>
         </a>
       </div>

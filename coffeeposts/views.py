@@ -76,4 +76,14 @@ def create_coffee_shop_post(request):
     return render(request, 'new_post.html', {'form': form})
 
 def edit_post(request, post_id):
-    return render(request, 'edit_post.html')
+    post_to_edit = get_object_or_404(CoffeeShopPost, id=post_id)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=post_to_edit)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user  
+            post.approved = False
+            post.save()
+            return redirect('post_approval')
+    form = PostForm(instance=post_to_edit)
+    return render(request, 'edit_post.html', {'form': form})
