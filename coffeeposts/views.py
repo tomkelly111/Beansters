@@ -58,6 +58,9 @@ class PostDetail(View):
 def post_approval_view(request):
     return render(request, 'post_approval.html')
 
+def edit_post_view(request):
+    return render(request, 'edit_post.html')
+
 def create_coffee_shop_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
@@ -72,3 +75,5 @@ def create_coffee_shop_post(request):
 
     return render(request, 'new_post.html', {'form': form})
 
+def edit_post(request, post_id):
+    return render(request, 'edit_post.html')
