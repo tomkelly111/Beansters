@@ -15,14 +15,16 @@
     <div class="card-body">
       <h5 class="card-title">{{ post.shop }}</h5>
       <p class="card-text">{{ post.description }}</p>
-      <div>
-        <a href="/edit/{{ post.id }}">
-          <button>Edit Post </button>
-        </a>
-        <a href="/delete/{{ post.id }}">
-          <button>Delete Post </button>
-        </a>
-      </div>
+      {% if request.user == post.author %}
+        <div>
+          <a href="/edit/{{ post.id }}">
+            <button>Edit Post </button>
+          </a>
+          <a href="/delete/{{ post.id }}">
+            <button>Delete Post </button>
+          </a>
+        </div>
+      {% endif %}
     </div>
     <div class="col-md-8 card mb-4  mt-3 ">
       <h3>Comments:</h3>
