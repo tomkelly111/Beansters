@@ -15,7 +15,7 @@ to be addressed : slug field in model, debug=true, form resubmits on page refres
 class comments and class reply taken fromhttps://www.youtube.com/watch?v=ScABStHY8cc&t=5s
 
 
-
+fix posts being added withouit approval
 
 
 

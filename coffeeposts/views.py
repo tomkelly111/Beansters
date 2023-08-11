@@ -94,6 +94,7 @@ def post_deleted(request):
 
 def delete_post(request, post_id):
     post = get_object_or_404(CoffeeShopPost, id=post_id)
-    post.delete()
-    return redirect('post_deleted')
+    if post.author == request.user:
+        post.delete()
+        return redirect('post_deleted')
 
