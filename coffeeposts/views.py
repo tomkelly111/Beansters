@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import CoffeeShopPost, Comment
 from .forms import PostForm, CommentForm
+from django.contrib import messages
+
 
 class PostList(generic.ListView):
     model = CoffeeShopPost
@@ -69,6 +71,7 @@ def create_coffee_shop_post(request):
             post.author = request.user  
             post.approved = False
             post.save()
+            messages.add_message(request, messages.SUCCESS, 'You have successfully added a Coffee Shop. Your post will be visible once it is approved')
             return redirect('post_approval') 
     else:
         form = PostForm()
