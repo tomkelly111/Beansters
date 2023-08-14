@@ -7,7 +7,7 @@ from django.contrib import messages
 
 class PostList(generic.ListView):
     model = CoffeeShopPost
-    queryset = CoffeeShopPost.objects.order_by('-created_on')
+    queryset = CoffeeShopPost.objects.filter(approved=True).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 3
 
@@ -89,7 +89,8 @@ def edit_post(request, post_id):
             post.save()
             messages.add_message(request, messages.SUCCESS, 'You have successfully edited your post, it will be visible once it is approved')
             return redirect('home')
-    form = PostForm(instance=post_to_edit)
+    else:
+        form = PostForm(instance=post_to_edit)
     
     return render(request, 'edit_post.html', {'form': form,
     'post': post_to_edit})
