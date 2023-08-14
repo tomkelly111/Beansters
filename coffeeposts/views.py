@@ -102,4 +102,15 @@ def delete_post(request, post_id):
         post.delete()
         messages.add_message(request, messages.INFO, 'Your post has been successfully deleted.')
         return redirect('home')
+# below taken from https://www.youtube.com/watch?v=AGtae4L5BbI
+def search_shops(request):
+    if request.method == "POST":
+        searched = request.POST["searched"]
+        shops = CoffeeShopPost.objects.filter(shop__icontains=searched)
+        return render(request, 'search_shops.html', 
+        {'searched': searched,
+        'shops': shops})
+    else:
+        return render(request, 'search_shops.html', {
 
+    })
