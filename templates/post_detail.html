@@ -19,14 +19,9 @@
     {% if request.user == post.author %}
     <div>
       <a href="/edit/{{ post.id }}">
-        <button>Edit Post </button>
+        <button class="btn btn-secondary">Edit Post</button>
       </a>
-      {% if user.is_authenticated and post.author == request.user %}
-      <button class="btn btn-delete" post_id="{{ post.id }}">Delete</button>
-      <!-- <a href="/delete/{{ post.id }}">
-            <button>Delete Post </button>
-          </a> -->
-      {% endif %}
+      <button class="btn btn-secondary" post_id="{{ post.id }}">Delete</button>
     </div>
     {% endif %}
   </div>

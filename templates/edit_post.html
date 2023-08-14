@@ -3,15 +3,22 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
+<p>request.user: {{ request.user }}</p>
+<p>post.author: {{ post.author }}</p>
 
+{% if request.user == post.author %}
+   
 <form method="post" style="margin-top: 1.3em;" enctype="multipart/form-data">
     {{ form | crispy }}
     {% csrf_token %}
     
     <button type="submit">Edit Post</button>
 </form>
-
-
+{% else %}
+<div class="div">
+    <p>You can only edit posts you have created.</p>
+</div>
+{% endif %}
 
 
 

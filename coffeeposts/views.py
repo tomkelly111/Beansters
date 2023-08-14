@@ -72,7 +72,7 @@ def create_coffee_shop_post(request):
             post.approved = False
             post.save()
             messages.add_message(request, messages.SUCCESS, 'You have successfully added a Coffee Shop. Your post will be visible once it is approved')
-            return redirect('post_approval') 
+            return redirect('home') 
     else:
         form = PostForm()
 
@@ -87,17 +87,18 @@ def edit_post(request, post_id):
             post.author = request.user  
             post.approved = False
             post.save()
-            return redirect('post_approval')
+            messages.add_message(request, messages.SUCCESS, 'You have successfully edited your post, it will be visible once it is approved')
+            return redirect('home')
     form = PostForm(instance=post_to_edit)
-    return render(request, 'edit_post.html', {'form': form})
+    
+    return render(request, 'edit_post.html', {'form': form,
+    'post': post_to_edit})
 
-
-def post_deleted(request):
-    return render(request, 'post_deleted.html')
 
 def delete_post(request, post_id):
     post = get_object_or_404(CoffeeShopPost, id=post_id)
     if post.author == request.user:
         post.delete()
-        return redirect('post_deleted')
+        messages.add_message(request, messages.INFO, 'Your post has been successfully deleted.')
+        return redirect('home')
 

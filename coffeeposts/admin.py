@@ -4,6 +4,8 @@ from .models import CoffeeShopPost, Comment
 
 @admin.register(CoffeeShopPost)
 class PostAdmin(admin.ModelAdmin):
+    list_display = ('shop', 'author', 'created_on', 'approved')
+    list_filter = ('approved', 'created_on')
     search_fields = ['shop']
     actions = ['approve_post']
 
