@@ -14,3 +14,18 @@ body {
 .homeimage {
     object-fit: cover;
 }
+
+
+
+.footer-icons i {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 40px;
+    transition: color 0.3s ease-in-out;
+    
+}
+.footer-icons a i:hover {
+    color: #e84610;
+}
+
