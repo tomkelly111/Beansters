@@ -3,50 +3,63 @@
 {% block content %}
 
 {% load crispy_forms_tags %}
-
-<div class="card">
-  <div class="card-header">
-    {% if "placeholder" in post.featured_image.url %}
-    <img class="card-img-top"
-      src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600">
-    {% else %}
-    <img class="card-img-top" src=" {{ post.featured_image.url }}">
-    {% endif %}
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">{{ post.shop }}</h5>
-    <p class="card-text">{{ post.description }}</p>
-    {% if request.user == post.author %}
-    <div>
-      <a href="/edit/{{ post.id }}">
-        <button class="btn btn-secondary">Edit Post</button>
-      </a>
-      <button class="btn btn-secondary" post_id="{{ post.id }}">Delete</button>
-    </div>
-    {% endif %}
-  </div>
-  <div class="col-md-8 card mb-4  mt-3 ">
-    <h3>Comments:</h3>
-    <div class="card-body">
-      <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
-      {% for comment in comments %}
-      <div class="comments" style="padding: 10px;">
-        <p class="font-weight-bold">
-          <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-          {{ comment.name }}
-          <span class=" text-muted font-weight-normal">
-            <!-- The comment's created date goes here -->
-            {{ comment.created_on }}
-          </span> wrote:
-        </p>
-        <!-- The body of the comment goes before the | -->
-        {{ comment.body | linebreaks }}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card-body">
+        <h2 class="card-title">{{ post.shop }}</h2>
+        <h4 class="card-text"><i>{{ post.description }}</i></h4>
+        <h5 class="card-text">Location: {{ post.location }}</h5>
+        <p class="author">Posted By: {{ post.author }}</p>
+        <p class="card-text">{{ post.review }}</p>
+        {% if request.user == post.author %}
+        <div>
+          <a href="/edit/{{ post.id }}">
+            <button class="btn btn-secondary">Edit Post</button>
+          </a>
+          <button class="btn btn-secondary" post_id="{{ post.id }}">Delete</button>
+        </div>
+        {% endif %}
       </div>
-      <!-- Our for loop ends here -->
-      {% endfor %}
+    </div>
+    <div class="col-md-6">
+      <div class="card-header">
+        {% if "placeholder" in post.featured_image.url %}
+        <img class="card-img-top"
+          src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600">
+        {% else %}
+        <img class="card-img-top" src=" {{ post.featured_image.url }}">
+        {% endif %}
+      </div>
     </div>
   </div>
-    <div class="card-body">
+
+</div>
+<div class="row m-2">
+  <div class="col-md-8 commentsection">
+    <div class="m-4">
+      <h3>Comments:</h3>
+      <div class="card-body">
+        <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
+        {% for comment in comments %}
+        <div class="comments" style="padding: 10px;">
+          <p class="font-weight-bold">
+            <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
+            {{ comment.name }}
+            <span class=" text-muted font-weight-normal">
+              <!-- The comment's created date goes here -->
+              {{ comment.created_on }}
+            </span> wrote:
+          </p>
+          <!-- The body of the comment goes before the | -->
+          {{ comment.body | linebreaks }}
+        </div>
+        <!-- Our for loop ends here -->
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+    <div class="col-md-4 commentsection">
       {% if commented %}
       <div class="alert alert-success" role="alert">
         Your comment is awaiting approval
@@ -54,18 +67,18 @@
       {% else %}
       {% if user.is_authenticated %}
 
-      <h3>Leave your review here:</h3>
+      <h3>Post your own review or leave a comment here:</h3>
       <p>Posting as : {{ user.username }}</p>
       <form method="post" style="margin-top: 1.3em;">
         {{ comment_form | crispy }}
         {% csrf_token %}
-        <button type="submit" class="btn btn-signup btn-lg">Submit Review</button>
+        <button class="btn btn-secondary" style="margin-top: 1.3em;" type="submit">Submit Comment</button>
       </form>
 
       {% endif %}
       {% endif %}
     </div>
-  </div>
+</div>
 
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">

@@ -15,7 +15,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ post.shop }}</h5>
           <p class="card-text">{{ post.description }}</p>
-          <p class="card-text"><small class="text-muted">Location</small></p>
+          <p class="card-text"><small class="text-muted">{{ post.location }}</small></p>
           <p class="author">Posted By: {{ post.author }}</p>
           <a type="button" class="btn btn-secondary btn-sm" href="{% url 'post_detail' shop=post.shop %}" role="button">Read reviews...</a>
         </div>

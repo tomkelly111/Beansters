@@ -8,6 +8,7 @@ from cloudinary.models import CloudinaryField
 class CoffeeShopPost(models.Model):
     shop = models.CharField(max_length=50, unique=True)
     description = models.CharField(max_length=150)
+    review = models.CharField(max_length=600)
     author = models.ForeignKey(User, on_delete=models.SET_DEFAULT, default='Account Deleted', related_name='coffee_shop')
     created_on = models.DateTimeField(auto_now_add=True)
     featured_image = CloudinaryField('image', default='placeholder')
@@ -33,7 +34,7 @@ class Comment(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
-        return self.comm_name
+        return self.body
 
 
 
