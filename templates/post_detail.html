@@ -15,9 +15,9 @@
         {% if request.user == post.author %}
         <div>
           <a href="/edit/{{ post.id }}">
-            <button class="btn btn-secondary">Edit Post</button>
+            <button class="btn btn-outline-secondary">Edit Post</button>
           </a>
-          <button class="btn btn-secondary" post_id="{{ post.id }}">Delete</button>
+          <button class="btn btn-outline-secondary" post_id="{{ post.id }}">Delete</button>
         </div>
         {% endif %}
       </div>
@@ -72,7 +72,7 @@
       <form method="post" style="margin-top: 1.3em;">
         {{ comment_form | crispy }}
         {% csrf_token %}
-        <button class="btn btn-secondary" style="margin-top: 1.3em;" type="submit">Submit Comment</button>
+        <button class="btn btn-outline-secondary" style="margin-top: 1.3em;" type="submit">Submit Comment</button>
       </form>
 
       {% endif %}
