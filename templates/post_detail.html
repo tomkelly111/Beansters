@@ -17,7 +17,7 @@
           <a href="/edit/{{ post.id }}">
             <button class="btn btn-outline-secondary">Edit Post</button>
           </a>
-          <button class="btn btn-outline-secondary" post_id="{{ post.id }}">Delete</button>
+          <button class="btn btn-outline-secondary btn-delete" post_id="{{ post.id }}">Delete</button>
         </div>
         {% endif %}
       </div>
@@ -25,10 +25,10 @@
     <div class="col-md-6">
       <div class="card-header">
         {% if "placeholder" in post.featured_image.url %}
-        <img class="card-img-top"
+        <img class="card-img-top" style="max-height: 40vh; object-fit: cover;"
           src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600">
         {% else %}
-        <img class="card-img-top" src=" {{ post.featured_image.url }}">
+        <img class="card-img-top" style="max-height: 40vh; object-fit: cover;" src=" {{ post.featured_image.url }}">
         {% endif %}
       </div>
     </div>
@@ -80,7 +80,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -91,7 +91,7 @@
         Are you sure you want to delete your post? This action cannot be undone.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
         <a id="deleteConfirm" href="#" class="btn btn-danger">Delete</a>
       </div>
     </div>

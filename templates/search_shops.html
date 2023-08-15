@@ -13,17 +13,17 @@
                 {% for shop in shops %}
                 <div class="card m-4">
                     {% if "placeholder" in shop.featured_image.url %}
-                    <img class="card-img-top"
+                    <img class="card-img-top" style="max-height: 30vh; object-fit: cover;"
                         src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600">
                     {% else %}
-                    <img class="card-img-top" src=" {{ shop.featured_image.url }}">
+                    <img class="card-img-top" style="max-height: 30vh; object-fit: cover;" src=" {{ shop.featured_image.url }}">
                     {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ shop.shop }}</h5>
                         <p class="card-text">{{ shop.description }}</p>
                         <p class="card-text"><small class="text-muted">{{ shop.location }}</small></p>
                         <p class="author">Posted By: {{ shop.author }}</p>
-                        <a type="button" class="btn btn-secondary btn-sm" href="{% url 'post_detail' shop=shop.shop %}"
+                        <a type="button" class="btn btn-outline-secondary btn-sm" href="{% url 'post_detail' shop=shop.shop %}"
                             role="button">Read reviews...</a>
                     </div>
                 </div>

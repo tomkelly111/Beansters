@@ -7,10 +7,10 @@
     {% for post in object_list %}
       <div class="card m-4">
         {% if "placeholder" in post.featured_image.url %}
-          <img class="card-img-top"
+          <img class="card-img-top" style="max-height: 30vh; object-fit: cover;"
             src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600">
           {% else %}
-          <img class="card-img-top" src=" {{ post.featured_image.url }}">
+          <img class="card-img-top" style="max-height: 30vh; object-fit: cover;" src=" {{ post.featured_image.url }}">
           {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{ post.shop }}</h5>

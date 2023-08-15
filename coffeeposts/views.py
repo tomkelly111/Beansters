@@ -55,13 +55,7 @@ class PostDetail(View):
         )
 
 
-    
-    
-def post_approval_view(request):
-    return render(request, 'post_approval.html')
 
-def edit_post_view(request):
-    return render(request, 'edit_post.html') # maybe can be deleted
 
 def create_coffee_shop_post(request):
     if request.method == 'POST':

@@ -30,6 +30,10 @@ a, span {
     background-color: #402E32 !important;
 }
 
+.btn-danger {
+    color: #402E32 !important;
+}
+
 .main-content {
     flex: 1;
   }
@@ -57,6 +61,7 @@ a, span {
 .commentsection {
     background-color: #dbb999;
     padding: 10px;
+    margin-bottom: 20px;
 }
 .comments{
     border: 1px solid #b8751e;
