@@ -1,23 +1,26 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
-    <script src="https://kit.fontawesome.com/e8b7e1c327.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Beansters | Coffee Shop Community</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
+  <script src="https://kit.fontawesome.com/e8b7e1c327.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Beansters | Coffee Shop Community</title>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <span class="navbar-brand">Beansters</span>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,7 +35,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'create_coffee_shop_post' %}">Add a Coffee Shop</a>
           </li>
-          
+
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -48,68 +51,70 @@
         <form class="d-flex" method=POST action="{% url 'search_shops' %}">
           {% csrf_token %}
 
-          <input class="form-control me-2" type="search" placeholder="Search Coffee Shops" aria-label="Search" name="searched">
+          <input class="form-control me-2" type="search" placeholder="Search Coffee Shops" aria-label="Search"
+            name="searched">
           <button class="btn btn-outline-secondary" type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
-  
-      <!-- below messages code taken from i think therefor i blog-->
-    <article class="container">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 offset-md-2">
-              {% for message in messages %}
-              <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                {{ message | safe }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-              {% endfor %}
+
+  <!-- below messages code taken from i think therefor i blog-->
+  <div class="container main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          {% for message in messages %}
+          <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+            {{ message | safe }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
+          {% endfor %}
         </div>
       </div>
-        <!-- Callout -->
-        <section class="callout">
-            <h1>Beansters Coffee Shop Reviews</h1>
-            <p>Search add or review your local coffee shops.</p>
-        </section>
-        <hr>
+    </div>
+    <!-- Callout -->
+    <div class="container">
+      <section class="callout">
+        <h1>Beansters Coffee Shop Reviews</h1>
+        <p>Search add or review your local coffee shops.</p>
+      </section>
+      <hr>
+    </div>
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
+  </div>
+  <footer class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <p>&copy; 2023 Beansters. All rights reserved.</p>
+      </div>
+    </div>
+    <div class="row footer-icons">
+      <div class="col-4">
+        <a href="{% url 'home' %}" aria-label="Home" class="footer-icon"><i class="fa-solid fa-house"></i></a>
+      </div>
+      <div class="col-4">
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="footer-icon"><i
+            class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="col-4">
+        <a href="mailto:info@example.com" target="_blank" aria-label="Instagram" class="footer-icon"><i
+            class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    setTimeout(function () {
+      let messages = document.getElementById('msg');
+      let alert = new bootstrap.Alert(messages);
+      alert.close();
+    }, 5000);
+  </script>
+  {% block extras %}
 
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
-
-        <footer class="container">
-          <div class="row justify-content-center">
-            <div class="col-md-4">
-              <p>&copy; 2023 Beansters. All rights reserved.</p>
-            </div>
-          </div>
-          <div class="row footer-icons">
-            <div class="col-4">
-              <a href="{% url 'home' %}" aria-label="Home" class="footer-icon"><i
-                  class="fa-solid fa-house"></i></a>
-            </div>
-            <div class="col-4">
-              <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="footer-icon"><i
-                  class="fa-brands fa-instagram"></i></a>
-            </div>
-            <div class="col-4">
-              <a href="mailto:info@example.com" target="_blank" aria-label="Instagram" class="footer-icon"><i
-                  class="fa-regular fa-envelope"></i></a>
-            </div>
-          </div>
-        </footer>
-        <script>
-          setTimeout(function () {
-              let messages = document.getElementById('msg');
-              let alert = new bootstrap.Alert(messages);
-              alert.close();
-          }, 5000);
-        </script>
-        {% block extras %}
-
-        {% endblock extras %}
+  {% endblock extras %}
 </body>
+
 </html>
