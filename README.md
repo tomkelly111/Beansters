@@ -78,14 +78,14 @@ Agile methodoligies were used to plan and design the website. User stories were 
 - As a **User** I can **see confirmations** so that **i know actions taken have been successful**.
 - As a **User** I can **rate a coffee shop out of stars** so that **others can easily see my opinion of a shop**.
 
-### Should Haves
+#### Should Haves
 - As a **User** I can **see an aggregate rating of all users on a post** so that **i can know the overall communities view of a coffee shop**.
 
-### Could Haves
+#### Could Haves
 - As a **User** I can **search by star rating** so that **I can discover the best coffee shops**.
 - As a **User** I can **add my own photos to a  coffee shop post** so that **other users can view them**.
   
-#### Wont Haves
+##### Wont Haves
 - As a **User** I can **receive notifications** so that **I know when people have replied to my comments**.
 - As a **User** I can **search by location on a map** so that **I can discover the best coffee shops in a certain area**.
 - As a **User** I can **add my own photos to a  coffee shop post** so that **other users can view them**.
@@ -127,6 +127,82 @@ Users have the option of editing their own posts if they wish. Once a post is up
 Users have the option to delete their own posts. If they choose to do so a modal will appear asking them to confirm the deletion. This is to ensure a post is not deleted accidentally as deleting a post cannot be undone and all associated comments will also be deleted.
 
 ### Database & Models
+
+<table>  
+        <tr>
+              <th>Coffee Shop Post</th>
+            </tr>    
+	<tr>
+              <th>Name</th>
+              <th>Type</th>
+            </tr>
+            <tr>
+              <td>Shop</td>
+              <td>CharField (unique)</td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>CharField</td>
+            </tr>
+            <tr>
+              <td>Review</td>
+              <td>CharField</td>
+            </tr>
+            <tr>
+              <td>Author</td>
+              <td>ForeignKey</td>
+            </tr>
+            <tr>
+              <td>created_on</td>
+              <td>DateTimeField</td>
+            </tr>
+            <tr>
+              <td>featured_image</td>
+              <td>CloudinaryField</td>
+            </tr>
+	<tr>
+              <td>Approved</td>
+              <td>BooleanField</td>
+            </tr>
+	<tr>
+              <td>Location</td>
+              <td>Charfield</td>
+            </tr>
+</table>
+
+<table>  
+        <tr>
+              <th>Comment Model</th>
+            </tr>  
+	<tr>
+              <th>Name</th>
+              <th>Type</th>
+            </tr>
+	<tr>
+              <td>Post</td>
+              <td>ForeignKey</td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>CharField</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>EmailField</td>
+            </tr>
+            <tr>
+              <td>Body</td>
+              <td>TextField</td>
+            </tr>
+            <tr>
+              <td>created_on</td>
+              <td>DateTimeField</td>
+            </tr>
+            <tr>
+              <td>Approved</td>
+              <td>BooleanField</td>
+            </tr>
+</table>
 
 ### Validation
 
