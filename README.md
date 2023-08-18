@@ -28,8 +28,9 @@ fix posts being added withouit approval
 ## Table of content
 
 - [User Experience](#user-experience)
-  - [User Stories](#user-stories)
+  - [Goal](#goal)
   - [Design](#design)
+  - [User Stories](#user-stories)
   - [Features](#features)
 
 
@@ -53,13 +54,78 @@ fix posts being added withouit approval
 
 
 ## User Experience
-### User Stories
+
+
+### Goal
+The goal of the website is to build a community of coffee lovers. The website is intended to be a place that coffee lovers come to post reviews of new coffee shops they find, discuss their views on exisiting coffee shops and discover coffee shops they haven't been to before.
+
+It is inteded that once their is a community of coffee lovers additional functionality can be added so that business owners can promote their coffee shops on the site.
+
 ### Design
+The website was designed with simplicity in mind. There is minimal clutter with the focus being on the coffee shop posts themselves. The font [Quicksand](https://fonts.google.com/specimen/Quicksand) was chosen as it adds to the minimalist feel of the site. The color palette was take from [Color Space](https://mycolor.space/) and was chosen as it is reflective of the colors of coffee itself. The darker colors which appear when hovering over buttons representing espresso, the header and footer being reminiscent of the coffe & milk mixture of cappucinos while the beige body similar to that of foamed milk that tops them.
+
+### User Stories
+Agile methodoligies were used to plan and design the website. User stories were created using issues on GitHub and were added  to two epics (milestones) the first for a minimal viable product and the second for additional functionality. The progress of these user stories were traked via the use of the GitHub kanban-board. 
+
+
+#### Completed (Must Haves)
+- As a **User** I can **add a coffee shop to the site** so that **other users can find it**.
+- As a **User** I can **interact with coffee shop posts** so that **i can give my review**.
+- As a **User** I can **edit my post or review** so that i can **give an updated opinion or correct a mistake**.
+- As a **User** I can **delete posts or comments** so that **they are removed from the website**.
+- As a **User** I can **search** so that **i can find coffee shops**.
+- As a **User** I can **create an account** so that **i can login to use the site**.
+- As a **User** I can **see confirmations** so that **i know actions taken have been successful**.
+- As a **User** I can **rate a coffee shop out of stars** so that **others can easily see my opinion of a shop**.
+
+### Should Haves
+- As a **User** I can **see an aggregate rating of all users on a post** so that **i can know the overall communities view of a coffee shop**.
+
+### Could Haves
+- As a **User** I can **search by star rating** so that **I can discover the best coffee shops**.
+- As a **User** I can **add my own photos to a  coffee shop post** so that **other users can view them**.
+  
+#### Wont Haves
+- As a **User** I can **receive notifications** so that **I know when people have replied to my comments**.
+- As a **User** I can **search by location on a map** so that **I can discover the best coffee shops in a certain area**.
+- As a **User** I can **add my own photos to a  coffee shop post** so that **other users can view them**.
+
+
 ### Features
+#### Homepage
+The homepage displays the most recently added coffee shop posts paginated by three. On first arrival the navbar provides the options to register or login. The option to add a coffee shop is displayed but this is only actie for logged in users.
+Each post dispalys an image, the shop name, location, a short description and who it was posted by. If users wish to they can click "read reviews" to read a full review and see comments.
+
+There is a search function which allows users to search for coffee shops. Results matching the search parameters will be displayed and if there are no available results users are given the option of adding a coffee shop themselves.
+
+#### Post Detail
+Once a user clicks "read reviews" on a post they are taken to the post detail view. Here they can see a full review of the coffee shop as made by the original poster. Here they will also be able to read comments which have been added by other users. If the user has logged in they will be able to add additional comments themselves.
+
+#### Add a Coffee Shop
+If users are logged in they have the option to add a coffee shop by clicking "Add a Coffee Shop" in the navbar. Once clicked the user is taken to a form where they can fill out the details of the coffee shop, provide a review and upload an image to accompany their post.
+
+#### Register / Login
+Users have the ability to register or login. Once they have done so they have the ability to post reviews or add comments.
+
+#### Confirmations
+The site offers users confirmations and feedback throughout to ensure the user knows what they are doing. There are confirmations for logging in, logging out, adding or editing a post (notifying the user that their post will appear once it has been approved) and adding a comment (same as for a post). When a user chooses to delete a post a modal will appear asking them if they are sure they want to delete as this cannot be undone.
+
 
 
 ## Functionality
 ### CRUD
+#### Create
+Users can add a coffee shop to the site. This is done via the use of a crispy form. They also have the option to add comments to a post which also uses crispy forms. Once this is done the post requires approval from the administrator. This is to ensure the quality of the content that is posted to the site.
+
+#### Read
+Once a post is made it can be viewed on the homepage and if clicked into it can be seen in more detail. Here any comments that have been added can also be viewed.
+
+#### Update
+Users have the option of editing their own posts if they wish. Once a post is updated it requires approval once again. The reasoning for this is to prevent a user's post being approved and then them being able to edit it to say something which is not keeping inline with the sites ethos. 
+
+#### Delete
+Users have the option to delete their own posts. If they choose to do so a modal will appear asking them to confirm the deletion. This is to ensure a post is not deleted accidentally as deleting a post cannot be undone and all associated comments will also be deleted.
+
 ### Database & Models
 
 ### Validation
