@@ -8,6 +8,7 @@
     <h1>You searched for {{ searched }}, here are your results:</h1>
         <br/>
     <div class="container">
+        {% if shops %}
         <div class="row">
             <div class="col-md-4">
                 {% for shop in shops %}
@@ -31,6 +32,10 @@
 
             </div>
         </div>
+        {% else %}
+        <h5> It looks like there are no results for {{ searched}}...</h5> 
+        <h5>Why not <a type="button" class="btn btn-outline-secondary btn-sm" href="{% url 'create_coffee_shop_post' %}" role="button">add a Coffee Shop</a> yourself?</h5>
+        {% endif %}
     </div>
         
         
