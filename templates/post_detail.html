@@ -65,6 +65,29 @@
         {% for comment in comments %}
         <div class="comments" style="padding: 10px;">
           <p class="font-weight-bold">
+            <div class="star-rating">
+              {% if comment.rating == 1 %}
+              <i class="fa-solid fa-star"></i>
+              {% elif comment.rating == 2 %}
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              {% elif comment.rating == 3 %}
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              {% elif comment.rating == 4 %}
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              {% elif pcommentost.rating == 5 %}
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              {% endif %}
+              </div>
             {{ comment.name }}
             <span class=" text-muted font-weight-normal">
               {{ comment.created_on }}
