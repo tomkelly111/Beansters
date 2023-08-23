@@ -9,6 +9,29 @@
       <div class="card-body">
         <h2 class="card-title">{{ post.shop }}</h2>
         <h4 class="card-text"><i>{{ post.description }}</i></h4>
+        <div class="star-rating">
+          {% if post.rating == 1 %}
+          <i class="fa-solid fa-star"></i>
+          {% elif post.rating == 2 %}
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          {% elif post.rating == 3 %}
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          {% elif post.rating == 4 %}
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          {% elif post.rating == 5 %}
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          {% endif %}
+          </div>
         <h5 class="card-text">Location: {{ post.location }}</h5>
         <p class="author">Posted By: {{ post.author }}</p>
         <p class="card-text">{{ post.review }}</p>
