@@ -6,7 +6,7 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = CoffeeShopPost
         fields = ('shop', 'description',
-                  'review', 'location', 'featured_image',)
+                  'review', 'location', 'featured_image', 'rating',)
 
 
 class CommentForm(forms.ModelForm):

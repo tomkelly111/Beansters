@@ -19,6 +19,29 @@
           <p class="card-text">{{ post.description }}</p>
           <p class="card-text"><small class="text-muted">{{ post.location }}</small></p>
           <p class="author">Posted By: {{ post.author }}</p>
+          <div>
+          {% if post.rating == 1 %}
+          <i class="fa-solid fa-star"></i>
+          {% elif post.rating == 2 %}
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          {% elif post.rating == 3 %}
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          {% elif post.rating == 4 %}
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          {% elif post.rating == 5 %}
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          {% endif %}
+          </div>
           <a class="btn btn-outline-secondary btn-sm" href="{% url 'post_detail' shop=post.shop %}"
             role="button">Read reviews...</a>
         </div>
