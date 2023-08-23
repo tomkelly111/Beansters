@@ -1,23 +1,5 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-CREDITS
-
-admin.py - https://stackoverflow.com/questions/28512710/how-to-add-custom-search-box-in-django-admin (i used following code:
-    class PostAdmin(admin.ModelAdmin):
-    search_fields = ['shop']
-)
-
-photo - https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600
-
-
-to be addressed : slug field in model, debug=true, form resubmits on page refresh
-
-class comments and class reply taken fromhttps://www.youtube.com/watch?v=ScABStHY8cc&t=5s
-
-
-fix posts being added withouit approval
-
-
 ...............................................
 # [Beansters](https://beansters-1fb9f50a5877.herokuapp.com/)
 
@@ -46,7 +28,7 @@ fix posts being added withouit approval
   - [Bugs](#bugs)
   - [Features to be Implemented](#features-to-be-implemented)
   
-- [Libraries](#libraries)
+- [Libraries and Tools](#libraries-and-tools)
 - [Technologies Used](#technologies-used)
 - [Deployment](#deployment)
 - [Credits](#credits)
@@ -65,10 +47,10 @@ It is inteded that once their is a community of coffee lovers additional functio
 The website was designed with simplicity in mind. There is minimal clutter with the focus being on the coffee shop posts themselves. The font [Quicksand](https://fonts.google.com/specimen/Quicksand) was chosen as it adds to the minimalist feel of the site. The color palette was take from [Color Space](https://mycolor.space/) and was chosen as it is reflective of the colors of coffee itself. The darker colors which appear when hovering over buttons representing espresso, the header and footer being reminiscent of the coffe & milk mixture of cappucinos while the beige body similar to that of foamed milk that tops them.
 
 ### User Stories
-Agile methodoligies were used to plan and design the website. User stories were created using issues on GitHub and were added  to two epics (milestones) the first for a minimal viable product and the second for additional functionality. The progress of these user stories were traked via the use of the GitHub kanban-board. 
+Agile methodoligies were used to plan and design the website. User stories were created using issues on GitHub and were added  to two epics (milestones) the first for a minimal viable product and the second for additional functionality. The progress of these user stories were traked via the use of the GitHub kanban-board. While the first iteration (the MVP) was completed successfully, there are still must have items not completed on the second iteration. These will still be implemented but were not ready in time for the project deadline.
 
 
-#### Completed (Must Haves)
+#### Must Haves
 - As a **User** I can **add a coffee shop to the site** so that **other users can find it**.
 - As a **User** I can **interact with coffee shop posts** so that **i can give my review**.
 - As a **User** I can **edit my post or review** so that i can **give an updated opinion or correct a mistake**.
@@ -91,6 +73,7 @@ Agile methodoligies were used to plan and design the website. User stories were 
 - As a **User** I can **add my own photos to a  coffee shop post** so that **other users can view them**.
 
 
+
 ### Features
 #### Homepage
 The homepage displays the most recently added coffee shop posts paginated by three. On first arrival the navbar provides the options to register or login. The option to add a coffee shop is displayed but this is only actie for logged in users.
@@ -110,6 +93,8 @@ Users have the ability to register or login. Once they have done so they have th
 #### Confirmations
 The site offers users confirmations and feedback throughout to ensure the user knows what they are doing. There are confirmations for logging in, logging out, adding or editing a post (notifying the user that their post will appear once it has been approved) and adding a comment (same as for a post). When a user chooses to delete a post a modal will appear asking them if they are sure they want to delete as this cannot be undone.
 
+#### Search
+The site has a search function which allows users to search for coffee shops. Once a search is completed matching posts are displayed and the user can click in to read more. If there are no results, this is displayed and the user is invited to add the coffee shop themselves.
 
 
 ## Functionality
@@ -532,9 +517,22 @@ The website link was provided to [ ] users all of whom were able to use the site
 
 ## Features to be Implemented
 
-## LIBRARIES
-The following libraries were used:
-- [ ]
+## LIBRARIES AND TOOLS
+The following libraries and tools were used:
+- Django
+  - Allauth
+  - Messages
+  - Crispy Forms
+- Python
+- HTML & CSS
+- Javascript
+- Bootstrap
+- Cloudinary
+- Font Awesome
+- Google Fonts
+- Elephant SQL
+- gunicorn
+- whitenoise  
 
 ## DEPLOYMENT
 
@@ -554,8 +552,22 @@ In order to deploy the website he following steps were followed:
 
 
 ## CREDITS
+Code and direction for the Search Function was taken from this [tutorial](https://www.youtube.com/watch?v=AGtae4L5Bb) provided by Codemy.com
+
+Code and direction for the Javascript and Modal function was taken from the Code Institute's Django Blog Webinar
+
+Code and direction for the messages feature was taken from the Code Institute's I think therefor I Blog module.
+
+Code and Direction for part of admin.py file were provided by users Francisco and catavaran on [Stack OverFlow](https://stackoverflow.com/questions/28512710/how-to-add-custom-search-box-in-django-admin)
+
+Code and direction for the comment model and views were taken from [codepiep](https://www.youtube.com/watch?v=ScABStHY8cc&t=5s)
+
+All photographs were provided by [Pexels](https://www.pexels.com/)
+
 Thanks to:
 - Code Institute for providing the Gitpod template.
+- Dick Vlaanderen for his mentoring support
+- The Code Institute Tutor Support 
 
 		
 
