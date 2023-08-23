@@ -43,6 +43,15 @@ class Comment(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
+    stars = (
+        (0, "N/A"),
+        (1, "1 Star = Do not reccomend"),
+        (2, "2 Star = Would visit if no other options"),
+        (3, "3 Star = Not bad if you need a fix"),
+        (4, "4 Star = They know what they are doing"),
+        (5, "5 Star = Must try!")
+        )
+    rating = models.IntegerField(choices=stars, default=0)
 
     class Meta:
         ordering = ['-created_on']
