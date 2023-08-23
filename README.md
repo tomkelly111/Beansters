@@ -229,11 +229,62 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
 ## TESTING
 
 ### Manual Testing
+#### Homepage
 <table>  
             <tr>
               <th>Action</th>
               <th>Expected Behaviour</th>
               <th>Pass / Fail </th>
+            </tr>
+            <tr>
+              <td>View hompage</td>
+              <td>last three posts are displayed in 3 columns all links work</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>View hompage</td>
+              <td>All nav bar links work but "add coffee shop post" link is inactive when user is logged out</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>View hompage</td>
+              <td>Footer sits at bottom of page and all icon links work</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Use search bar</td>
+              <td>Successful search returns result</td>
+              <td>Unsuccessful search returns prompt to add coffee shop</td>
+            </tr>
+            <tr>
+              <td>Click "Read reviews" button on post</td>
+              <td>Brings user to post detail view</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Click Login</td>
+              <td>Brings user to login page</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Click Register</td>
+              <td>Brings user to register page</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Click Add a Coffee Shop</td>
+              <td>Brings user to new post page</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr>
               <td></td>
@@ -266,6 +317,208 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
               <td></td>
             </tr>
 </table>
+#### Register Page
+<table>  
+            <tr>
+              <th>Action</th>
+              <th>Expected Behaviour</th>
+              <th>Pass / Fail </th>
+            </tr>
+            <tr>
+              <td>Click Register in Nav Bar</td>
+              <td>Sign Up form is displayed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Sign Up</td>
+              <td>Message alert says registration was successful</td>
+              <td></td>
+            </tr>
+</table>
+
+#### Login Page
+<table>  
+            <tr>
+              <th>Action</th>
+              <th>Expected Behaviour</th>
+              <th>Pass / Fail </th>
+            </tr>
+            <tr>
+              <td>Click Login in Nav Bar</td>
+              <td>Login form is displayed</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Login</td>
+              <td>Message alert says login was successful</td>
+              <td></td>
+            </tr>
+</table>
+
+#### Add a Coffee Shop Page
+<table>  
+            <tr>
+              <th>Action</th>
+              <th>Expected Behaviour</th>
+              <th>Pass / Fail </th>
+            </tr>
+            <tr>
+              <td>Click Add a Coffee Shop in Nav Bar</td>
+              <td>Brings user to new post page</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Create Post</td>
+              <td>Message alert says post will appear once approved and user is returned to Homepage</td>
+              <td></td>
+            </tr>
+</table>
+
+#### Post Detail Page
+<table>  
+            <tr>
+              <th>Action</th>
+              <th>Expected Behaviour</th>
+              <th>Pass / Fail </th>
+            </tr>
+            <tr>
+              <td>Click Read Reviews on post on Homepage</td>
+              <td>Brings User to Post Detail page</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Edit / Delete</td>
+              <td>If user is author of post there should be options to edit or delete post</td>
+              <td></td>
+            </tr>
+            <td>Click Edit</td>
+              <td>User is brought to Edit Post page</td>
+              <td></td>
+            </tr>
+            <tr>
+            <td>Edit Post</td>
+              <td>User is returned to Homepage and message alert displays stating post is waiting approval</td>
+              <td></td>
+            </tr>
+            <tr>
+            <td>Delete Post</td>
+              <td>Modal should appear asking user to confirm as deletion cannot be undone</td>
+              <td></td>
+            </tr>
+            <tr>
+            <td>Add Comment</td>
+              <td>If user is not logged in text should display asking them to login or register in order to post a comment</td>
+              <td></td>
+            </tr>
+            <tr>
+            <td>Add Comment</td>
+              <td>If user is  logged in comment form should display</td>
+              <td></td>
+            </tr>
+            <tr>
+            <td>Add Comment</td>
+              <td>Once User adds comment, a message alert should display stating their comment is awaiting approval</td>
+              <td></td>
+            </tr>
+</table>
+
+#### Page Layout
+<table>  
+            <tr>
+              <th>Action</th>
+              <th>Expected Behaviour</th>
+              <th>Pass / Fail </th>
+            </tr>
+            <tr>
+              <td>Mobile - Home page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            tr>
+              <td>Mobil - Post Detail page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Mobile - Register page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Mobile - Login page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Mobile - Logout page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Mobile - Add a Coffee Shop page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Mobile - Edit Post page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Mobile - Search page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+</table>
+
+<table>  
+            <tr>
+              <th>Action</th>
+              <th>Expected Behaviour</th>
+              <th>Pass / Fail </th>
+            </tr>
+            <tr>
+              <td>Desktop - Home page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            tr>
+              <td>Desktop - Post Detail page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Desktop - Register page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Desktop - Login page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Desktop - Logout page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Desktop - Add a Coffee Shop page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Desktop - Edit Post page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Desktop - Search page</td>
+              <td>Layout is displayed correctly</td>
+              <td></td>
+            </tr>
+</table>
+
 
 ### User Testing
 The website link was provided to [ ] users all of whom were able to use the site easily and navigate the options without issue. A majority of the users said [ ]. 
