@@ -435,7 +435,7 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
               <td></td>
             </tr>
             tr>
-              <td>Mobil - Post Detail page</td>
+              <td>Mobile - Post Detail page</td>
               <td>Layout is displayed correctly</td>
               <td></td>
             </tr>
