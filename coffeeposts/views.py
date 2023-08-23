@@ -11,7 +11,6 @@ class PostList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 3
 
-# Create your views here.
 class PostDetail(View):
     def get(self, request, shop, *args, **kwargs):
         queryset = CoffeeShopPost.objects
@@ -96,7 +95,8 @@ def delete_post(request, post_id):
         post.delete()
         messages.add_message(request, messages.INFO, 'Your post has been successfully deleted.')
         return redirect('home')
-# below taken from https://www.youtube.com/watch?v=AGtae4L5BbI
+
+
 def search_shops(request):
     if request.method == "POST":
         searched = request.POST["searched"]

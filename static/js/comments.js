@@ -11,4 +11,3 @@ for (let button of deleteButtons) {
         deleteModal.show();
     });
 }
-// #code taken from django blog walkthrough webinar

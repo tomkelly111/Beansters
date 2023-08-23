@@ -22,10 +22,3 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
 
-# @admin.register(Reply)
-# class CommentAdmin(admin.ModelAdmin):
-#     search_fields = ('comment_name', 'author',)
-#     actions = ['approve_comments']
-
-#     def approve_comments(self, request, queryset):
-#         queryset.update(approved=True)
