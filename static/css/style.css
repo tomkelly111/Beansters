@@ -74,7 +74,11 @@ span {
     border-radius: 10px;
 }
 
-
+.star-rating {
+    text-decoration: none;
+    color: #b8751e;
+    margin: 5px;
+}
 .homeimage {
     object-fit: cover;
 }
