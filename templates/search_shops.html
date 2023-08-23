@@ -4,44 +4,45 @@
 {% block content %}
 
 
-    {% if searched %}
-    <h1>You searched for {{ searched }}, here are your results:</h1>
-        <br/>
-    <div class="container">
-        {% if shops %}
-        <div class="row">
-            <div class="col-md-4">
-                {% for shop in shops %}
-                <div class="card m-4">
-                    {% if "placeholder" in shop.featured_image.url %}
-                    <img class="card-img-top" style="max-height: 30vh; object-fit: cover;"
-                        src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600">
-                    {% else %}
-                    <img class="card-img-top" style="max-height: 30vh; object-fit: cover;" src=" {{ shop.featured_image.url }}">
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title">{{ shop.shop }}</h5>
-                        <p class="card-text">{{ shop.description }}</p>
-                        <p class="card-text"><small class="text-muted">{{ shop.location }}</small></p>
-                        <p class="author">Posted By: {{ shop.author }}</p>
-                        <a type="button" class="btn btn-outline-secondary btn-sm" href="{% url 'post_detail' shop=shop.shop %}"
-                            role="button">Read reviews...</a>
-                    </div>
+{% if searched %}
+<h1>You searched for {{ searched }}, here are your results:</h1>
+<div class="container">
+    {% if shops %}
+    <div class="row">
+        <div class="col-md-4">
+            {% for shop in shops %}
+            <div class="card m-4">
+                {% if "placeholder" in shop.featured_image.url %}
+                <img class="card-img-top" style="max-height: 30vh; object-fit: cover;"
+                    src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Coffee Shop Image">
+                {% else %}
+                <img class="card-img-top" style="max-height: 30vh; object-fit: cover;"
+                    src=" {{ shop.featured_image.url }}" alt="Coffee Shop Image">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ shop.shop }}</h5>
+                    <p class="card-text">{{ shop.description }}</p>
+                    <p class="card-text"><small class="text-muted">{{ shop.location }}</small></p>
+                    <p class="author">Posted By: {{ shop.author }}</p>
+                    <a class="btn btn-outline-secondary btn-sm"
+                        href="{% url 'post_detail' shop=shop.shop %}" role="button">Read reviews...</a>
                 </div>
-                {% endfor %}
-
             </div>
+            {% endfor %}
+
         </div>
-        {% else %}
-        <h5> It looks like there are no results for {{ searched}}...</h5> 
-        <h5>Why not <a type="button" class="btn btn-outline-secondary btn-sm" href="{% url 'create_coffee_shop_post' %}" role="button">add a Coffee Shop</a> yourself?</h5>
-        {% endif %}
     </div>
-        
-        
     {% else %}
-    <h1>Hey! you forgot to search for a shop...</h1>
+    <h5> It looks like there are no results for {{ searched}}...</h5>
+    <h5>Why not <a class="btn btn-outline-secondary btn-sm" href="{% url 'create_coffee_shop_post' %}"
+            role="button">add a Coffee Shop</a> yourself?</h5>
     {% endif %}
+</div>
+
+
+{% else %}
+<h1>Hey! you forgot to search for a shop...</h1>
+{% endif %}
 
 
 

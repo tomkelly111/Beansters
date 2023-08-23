@@ -14,10 +14,9 @@
         <p class="card-text">{{ post.review }}</p>
         {% if request.user == post.author %}
         <div>
-          <a href="/edit/{{ post.id }}">
-            <button class="btn btn-outline-secondary">Edit Post</button>
-          </a>
-          <button class="btn btn-outline-secondary btn-delete" post_id="{{ post.id }}">Delete</button>
+          <a class="btn btn-outline-secondary" href="/edit/{{ post.id }}"
+            role="button">Edit Post</a>
+          <button class="btn btn-outline-secondary btn-delete" data-post_id="{{ post.id }}">Delete</button>
         </div>
         {% endif %}
       </div>
@@ -26,9 +25,9 @@
       <div class="card-header">
         {% if "placeholder" in post.featured_image.url %}
         <img class="card-img-top" style="max-height: 40vh; object-fit: cover;"
-          src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600">
+          src="https://images.pexels.com/photos/894695/pexels-photo-894695.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Coffee Shop Picture">
         {% else %}
-        <img class="card-img-top" style="max-height: 40vh; object-fit: cover;" src=" {{ post.featured_image.url }}">
+        <img class="card-img-top" style="max-height: 40vh; object-fit: cover;" src=" {{ post.featured_image.url }}" alt="Coffee Shop Picture">
         {% endif %}
       </div>
     </div>
@@ -54,14 +53,14 @@
       </div>
     </div>
   </div>
-    <div class="col-md-4 commentsection">
-      {% if commented %}
-      <div class="alert alert-success" role="alert">
-        Your comment is awaiting approval
-      </div>
-      {% else %}
-      {% if user.is_authenticated %}
-      <div class="comments p-2">
+  <div class="col-md-4 commentsection">
+    {% if commented %}
+    <div class="alert alert-success" role="alert">
+      Your comment is awaiting approval
+    </div>
+    {% else %}
+    {% if user.is_authenticated %}
+    <div class="comments p-2">
       <h3>Post your own review or leave a comment here:</h3>
       <p>Posting as : {{ user.username }}</p>
       <form method="post" style="margin-top: 1.3em;">
@@ -69,18 +68,21 @@
         {% csrf_token %}
         <button class="btn btn-outline-secondary" style="margin-top: 1.3em;" type="submit">Submit Comment</button>
       </form>
-       </div>
-      {% else %}
-      <div class="comments p-2">
-        <h4>Please <a type="button" class="btn btn-outline-secondary btn-sm" href="{% url 'account_login' %}" role="button">Login</a> or <a type="button" class="btn btn-outline-secondary btn-sm" href="{% url 'account_signup' %}" role="button">Register</a> if you wish to comment.</h4>
-      </div>
-
-      {% endif %}
-      {% endif %}
     </div>
+    {% else %}
+    <div class="comments p-2">
+      <h4>Please <a type="button" class="btn btn-outline-secondary btn-sm" href="{% url 'account_login' %}"
+          role="button">Login</a> or <a type="button" class="btn btn-outline-secondary btn-sm"
+          href="{% url 'account_signup' %}" role="button">Register</a> if you wish to comment.</h4>
+    </div>
+
+    {% endif %}
+    {% endif %}
+  </div>
 </div>
 
-<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

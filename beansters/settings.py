@@ -31,7 +31,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-tomkelly111-beansters-eitrrmoipi7.ws-eu104.gitpod.io', '8000-tomkelly111-beansters-eitrrmoipi7.ws-eu103.gitpod.io', '8000-tomkelly111-beansters-s1gse8gu439.ws-eu102.gitpod.io', 'beansters-1fb9f50a5877.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [
+    '8000-tomkelly111-beansters-eitrrmoipi7.ws-eu104.gitpod.io',
+    '8000-tomkelly111-beansters-eitrrmoipi7.ws-eu103.gitpod.io',
+    '8000-tomkelly111-beansters-s1gse8gu439.ws-eu102.gitpod.io',
+    'beansters-1fb9f50a5877.herokuapp.com', 'localhost'
+    ]
 
 
 # Application definition
@@ -120,16 +125,21 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.\
+            UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 

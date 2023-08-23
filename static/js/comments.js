@@ -5,7 +5,6 @@ var deleteConfirm = document.getElementById("deleteConfirm");
 
 for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
-        console.log(button)
         let postId = e.target.getAttribute("post_id");
         deleteConfirm.href = `/delete/${postId}`;
         deleteModal.show();

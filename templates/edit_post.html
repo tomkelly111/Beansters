@@ -6,11 +6,11 @@
 
 
 {% if request.user == post.author %}
-   
+
 <form method="post" style="margin-top: 1.3em;" enctype="multipart/form-data">
     {{ form | crispy }}
     {% csrf_token %}
-    
+
     <button class="btn btn-outline-secondary btn-sm m-3" type="submit">Edit Post</button>
 </form>
 {% else %}
