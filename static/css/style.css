@@ -8,7 +8,7 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: "Quicksand", sans-serif;
-    color: #b8751e;
+    color: #402E32;
 }
 
 .bg-light {
@@ -17,7 +17,7 @@ body {
 
 a,
 span {
-    color: #b8751e !important;
+    color: #402E32 !important;
 }
 
 .navbar-nav .nav-link:hover {
@@ -25,7 +25,7 @@ span {
 }
 
 .btn.btn-outline-secondary {
-    color: #b8751e !important;
+    color: #402E32 !important;
     border-color: #b8751e !important;
 }
 
@@ -48,7 +48,7 @@ span {
 .page-link {
     padding: 10px 20px;
     font-size: 16px;
-    color: #b8751e;
+    color: #402E32;
     border: 1px solid #b8751e;
     border-radius: 5px;
     transition: all 0.35s ease-in-out;
@@ -94,7 +94,7 @@ footer {
     justify-content: space-around;
     width: 100%;
     font-size: 30px;
-    color: #b8751e;
+    color: #402E32;
     transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
     -webkit-transition: all 0.35s ease-in-out;
