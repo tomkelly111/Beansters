@@ -47,10 +47,10 @@ It is inteded that once their is a community of coffee lovers additional functio
 The website was designed with simplicity in mind. There is minimal clutter with the focus being on the coffee shop posts themselves. The font [Quicksand](https://fonts.google.com/specimen/Quicksand) was chosen as it adds to the minimalist feel of the site. The color palette was take from [Color Space](https://mycolor.space/) and was chosen as it is reflective of the colors of coffee itself. The darker colors which appear when hovering over buttons representing espresso, the header and footer being reminiscent of the coffe & milk mixture of cappucinos while the beige body similar to that of foamed milk that tops them.
 
 ### User Stories
-Agile methodoligies were used to plan and design the website. User stories were created using issues on GitHub and were added  to two epics (milestones) the first for a minimal viable product and the second for additional functionality. The progress of these user stories were traked via the use of the GitHub kanban-board. While the first iteration (the MVP) was completed successfully, there are still must have items not completed on the second iteration. These will still be implemented but were not ready in time for the project deadline.
+Agile methodoligies were used to plan and design the website. User stories were created using issues on GitHub and were added  to two epics (milestones) the first for a minimal viable product and the second for additional functionality. The progress of these user stories were traked via the use of the GitHub kanban-board. While the first iteration (the MVP) was completed successfully, there are still items not completed on the second iteration. These will still be implemented but were not ready in time for the project deadline. It was decided in accordance with agile principles that scope would be amended rather than implemenmting all desired features at a lower quality.
 
 
-#### Must Haves
+#### Must Haves (Completed)
 - As a **User** I can **add a coffee shop to the site** so that **other users can find it**.
 - As a **User** I can **interact with coffee shop posts** so that **i can give my review**.
 - As a **User** I can **edit my post or review** so that i can **give an updated opinion or correct a mistake**.
@@ -153,6 +153,10 @@ Users have the option to delete their own posts. If they choose to do so a modal
               <td>Location</td>
               <td>Charfield</td>
             </tr>
+	<tr>
+              <td>Rating</td>
+              <td>Integerfield</td>
+            </tr>
 </table>
 
 <table>  
@@ -187,6 +191,10 @@ Users have the option to delete their own posts. If they choose to do so a modal
               <td>Approved</td>
               <td>BooleanField</td>
             </tr>
+	<tr>
+              <td>Rating</td>
+              <td>Integerfield</td>
+            </tr>
 </table>
 
 ### Validation
@@ -207,7 +215,7 @@ PYTHON - No errors were shown when code was checked with the Code Institute Pyth
 
 <image>
 
-Accessibility - I confirmed the code used is accessible by using lighthouse in devtools.
+Accessibility - I confirmed the code used is accessible by using lighthouse in devtools. [Poor performance]
 
 <image>
 
@@ -239,7 +247,12 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
             <tr>
               <td>Use search bar</td>
               <td>Successful search returns result</td>
+              <td></td>
+            </tr>
+	<tr>
+              <td>Use search bar</td>
               <td>Unsuccessful search returns prompt to add coffee shop</td>
+              <td></td>
             </tr>
             <tr>
               <td>Click "Read reviews" button on post</td>
@@ -302,6 +315,7 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
               <td></td>
             </tr>
 </table>
+
 #### Register Page
 <table>  
             <tr>
@@ -376,6 +390,7 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
               <td>If user is author of post there should be options to edit or delete post</td>
               <td></td>
             </tr>
+	<tr>
             <td>Click Edit</td>
               <td>User is brought to Edit Post page</td>
               <td></td>
@@ -419,7 +434,7 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
               <td>Layout is displayed correctly</td>
               <td></td>
             </tr>
-            tr>
+            <tr>
               <td>Mobile - Post Detail page</td>
               <td>Layout is displayed correctly</td>
               <td></td>
@@ -467,7 +482,7 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
               <td>Layout is displayed correctly</td>
               <td></td>
             </tr>
-            tr>
+            <tr>
               <td>Desktop - Post Detail page</td>
               <td>Layout is displayed correctly</td>
               <td></td>
@@ -510,12 +525,15 @@ The website link was provided to [ ] users all of whom were able to use the site
 
 ### Bugs
 #### Solved Bugs
-[ ]
+[ error with authall login due to typo in settings file as a result of trying to shorten lines of code ]
 
 #### Remaining Bugs
 - none
 
 ## Features to be Implemented
+When a user logins to comment on a post they are brought to the homepage instead of back to the page they were viewing
+
+when editing a post there is no cancle button
 
 ## LIBRARIES AND TOOLS
 The following libraries and tools were used:
@@ -552,15 +570,17 @@ In order to deploy the website he following steps were followed:
 
 
 ## CREDITS
-Code and direction for the Search Function was taken from this [tutorial](https://www.youtube.com/watch?v=AGtae4L5Bb) provided by Codemy.com
+Code and direction for the Search Function was taken from this [tutorial](https://www.youtube.com/watch?v=AGtae4L5Bb) provided by Codemy.com.
 
-Code and direction for the Javascript and Modal function was taken from the Code Institute's Django Blog Webinar
+Code and direction for the Javascript and Modal function was taken from the Code Institute's Django Blog Webinar.
 
 Code and direction for the messages feature was taken from the Code Institute's I think therefor I Blog module.
 
-Code and Direction for part of admin.py file were provided by users Francisco and catavaran on [Stack OverFlow](https://stackoverflow.com/questions/28512710/how-to-add-custom-search-box-in-django-admin)
+Code and Direction for part of admin.py file were provided by users Francisco and catavaran on [Stack OverFlow](https://stackoverflow.com/questions/28512710/how-to-add-custom-search-box-in-django-admin).
 
-Code and direction for the comment model and views were taken from [codepiep](https://www.youtube.com/watch?v=ScABStHY8cc&t=5s)
+Inspiration for the Star Rating feature was taken from Arron Beale's "number of guests" feature in his Portfolio Project 4 [The Diplomat](https://github.com/ArronBeale/CI_PP4_the_diplomat)
+
+Code and direction for the comment model and views were taken from [codepiep](https://www.youtube.com/watch?v=ScABStHY8cc&t=5s).
 
 All photographs were provided by [Pexels](https://www.pexels.com/)
 
