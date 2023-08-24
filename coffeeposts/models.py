@@ -26,7 +26,6 @@ class CoffeeShopPost(models.Model):
         )
     rating = models.IntegerField(choices=stars, default=0)
 
-
     class Meta:
         ordering = ['-created_on']
 

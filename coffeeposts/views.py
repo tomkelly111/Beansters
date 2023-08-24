@@ -3,6 +3,7 @@ from django.views import generic, View
 from .models import CoffeeShopPost, Comment
 from .forms import PostForm, CommentForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 class PostList(generic.ListView):
@@ -28,7 +29,7 @@ class PostDetail(View):
                     "comment_form": CommentForm()
                 }
             )
-
+    @login_required
     def post(self, request, shop, *args, **kwargs):
         queryset = CoffeeShopPost.objects
         post = get_object_or_404(queryset, shop=shop)
@@ -55,7 +56,7 @@ class PostDetail(View):
             }
         )
 
-
+@login_required
 def create_coffee_shop_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
@@ -74,7 +75,7 @@ def create_coffee_shop_post(request):
 
     return render(request, 'new_post.html', {'form': form})
 
-
+@login_required
 def edit_post(request, post_id):
     post_to_edit = get_object_or_404(CoffeeShopPost, id=post_id)
     if request.method == 'POST':
@@ -94,7 +95,7 @@ def edit_post(request, post_id):
     return render(request, 'edit_post.html', {'form': form,
                   'post': post_to_edit})
 
-
+@login_required
 def delete_post(request, post_id):
     post = get_object_or_404(CoffeeShopPost, id=post_id)
     if post.author == request.user:
