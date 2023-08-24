@@ -232,87 +232,47 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
             <tr>
               <td>View hompage</td>
               <td>last three posts are displayed in 3 columns all links work</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>View hompage</td>
               <td>All nav bar links work but "add coffee shop post" link is inactive when user is logged out</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>View hompage</td>
               <td>Footer sits at bottom of page and all icon links work</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Use search bar</td>
               <td>Successful search returns result</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
 	<tr>
               <td>Use search bar</td>
               <td>Unsuccessful search returns prompt to add coffee shop</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Click "Read reviews" button on post</td>
               <td>Brings user to post detail view</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Click Login</td>
               <td>Brings user to login page</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Click Register</td>
               <td>Brings user to register page</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Click Add a Coffee Shop</td>
               <td>Brings user to new post page</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>Pass</td>
             </tr>
 </table>
 
@@ -326,12 +286,12 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
             <tr>
               <td>Click Register in Nav Bar</td>
               <td>Sign Up form is displayed</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Sign Up</td>
-              <td>Message alert says registration was successful</td>
-              <td></td>
+              <td>Message alert says sign in was successful</td>
+              <td>Pass</td>
             </tr>
 </table>
 
@@ -345,12 +305,31 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
             <tr>
               <td>Click Login in Nav Bar</td>
               <td>Login form is displayed</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Login</td>
               <td>Message alert says login was successful</td>
-              <td></td>
+              <td>Pass</td>
+            </tr>
+</table>
+
+#### Login Out Page
+<table>  
+            <tr>
+              <th>Action</th>
+              <th>Expected Behaviour</th>
+              <th>Pass / Fail </th>
+            </tr>
+            <tr>
+              <td>Click Logout in Nav Bar</td>
+              <td>Logout confirmation is displayed</td>
+              <td>Pass</td>
+            </tr>
+            <tr>
+              <td>Logout</td>
+              <td>Message alert says logout was successful</td>
+              <td>Pass</td>
             </tr>
 </table>
 
@@ -362,14 +341,19 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
               <th>Pass / Fail </th>
             </tr>
             <tr>
-              <td>Click Add a Coffee Shop in Nav Bar</td>
+              <td>User logged out - Click Add a Coffee Shop in Nav Bar</td>
+              <td>Link inactive</td>
+              <td>Pass</td>
+            </tr>
+            <tr>
+              <td>User logged in - Click Add a Coffee Shop in Nav Bar</td>
               <td>Brings user to new post page</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Create Post</td>
               <td>Message alert says post will appear once approved and user is returned to Homepage</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
 </table>
 
@@ -383,42 +367,42 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
             <tr>
               <td>Click Read Reviews on post on Homepage</td>
               <td>Brings User to Post Detail page</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Edit / Delete</td>
               <td>If user is author of post there should be options to edit or delete post</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
 	<tr>
             <td>Click Edit</td>
               <td>User is brought to Edit Post page</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
             <td>Edit Post</td>
               <td>User is returned to Homepage and message alert displays stating post is waiting approval</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
             <td>Delete Post</td>
               <td>Modal should appear asking user to confirm as deletion cannot be undone</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
             <td>Add Comment</td>
               <td>If user is not logged in text should display asking them to login or register in order to post a comment</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
             <td>Add Comment</td>
               <td>If user is  logged in comment form should display</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
             <td>Add Comment</td>
               <td>Once User adds comment, a message alert should display stating their comment is awaiting approval</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
 </table>
 
@@ -432,42 +416,42 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
             <tr>
               <td>Mobile - Home page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Mobile - Post Detail page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Mobile - Register page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Mobile - Login page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Mobile - Logout page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Mobile - Add a Coffee Shop page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Mobile - Edit Post page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Mobile - Search page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
 </table>
 
@@ -480,60 +464,60 @@ Accessibility - I confirmed the code used is accessible by using lighthouse in d
             <tr>
               <td>Desktop - Home page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Desktop - Post Detail page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Desktop - Register page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Desktop - Login page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Desktop - Logout page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Desktop - Add a Coffee Shop page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Desktop - Edit Post page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
             <tr>
               <td>Desktop - Search page</td>
               <td>Layout is displayed correctly</td>
-              <td></td>
+              <td>Pass</td>
             </tr>
 </table>
 
 
 ### User Testing
-The website link was provided to [ ] users all of whom were able to use the site easily and navigate the options without issue. A majority of the users said [ ]. 
+The website link was provided to 3 users all of whom were able to use the site easily and navigate the options without issue. The rating system was liked by all users. Some feedback was recieved that they would like to be able to view their account details or change password. 
 
 ### Bugs
 #### Solved Bugs
-[ error with authall login due to typo in settings file as a result of trying to shorten lines of code ]
+During testing an error was discovered whereby users could not sign up. This was due to formatting in the settings.py file where code was altered to fit on one line. This bug was resloved. 
 
 #### Remaining Bugs
 - none
 
 ## Features to be Implemented
-When a user logins to comment on a post they are brought to the homepage instead of back to the page they were viewing
+When a user logins to comment on a post they are brought to the homepage instead of back to the page they were viewing. This will be addressed during the next iteration so that the user is returned to the page they intended to comment on.
 
-when editing a post there is no cancle button
+When a user chooses to edit a post there is no way to cancel except for exiting the page. This will also be addressed in the next iteration.
 
 ## LIBRARIES AND TOOLS
 The following libraries and tools were used:
