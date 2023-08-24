@@ -110,3 +110,11 @@ footer {
     color: #402E32;
     text-decoration: none;
 }
+
+/* Images */
+.userimages {
+    max-width: 600px; 
+    max-height: 300px;
+    object-fit: cover;
+}
+

@@ -13,10 +13,10 @@
             {% for shop in shops %}
             <div class="card m-4">
                 {% if "placeholder" in shop.featured_image.url %}
-                <img class="card-img-top" width="640" height="360" style="max-height: 30vh; object-fit: cover;"
+                <img class="card-img-top userimages" 
                     src="{% static 'images/coffeedefault.jpg' %}" alt="Coffee Shop Image">
                 {% else %}
-                <img class="card-img-top" width="640" height="360" style="max-height: 30vh; object-fit: cover;"
+                <img class="card-img-top userimages" 
                     src=" {{ shop.featured_image.url }}" alt="Coffee Shop Image">
                 {% endif %}
                 <div class="card-body">

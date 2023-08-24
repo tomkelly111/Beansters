@@ -582,7 +582,7 @@ Inspiration for the Star Rating feature was taken from Arron Beale's "number of 
 
 Code and direction for the comment model and views were taken from [codepiep](https://www.youtube.com/watch?v=ScABStHY8cc&t=5s).
 
-All photographs were provided by [Pexels](https://www.pexels.com/)
+All photographs were provided by [Pexels](https://www.pexels.com/) and minified with https://app.imagify.io/
 
 Thanks to:
 - Code Institute for providing the Gitpod template.

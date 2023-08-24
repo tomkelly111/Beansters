@@ -47,10 +47,10 @@
     <div class="col-md-6">
       <div class="card-header">
         {% if "placeholder" in post.featured_image.url %}
-        <img class="card-img-top" width="640" height="360" style="max-height: 40vh; object-fit: cover;"
+        <img class="card-img-top userimages" 
           src="{% static 'images/coffeedefault.jpg' %}" alt="Coffee Shop Picture">
         {% else %}
-        <img class="card-img-top" width="640" height="360" style="max-height: 40vh; object-fit: cover;" src=" {{ post.featured_image.url }}" alt="Coffee Shop Picture">
+        <img class="card-img-top userimages" src=" {{ post.featured_image.url }}" alt="Coffee Shop Picture">
         {% endif %}
       </div>
     </div>
