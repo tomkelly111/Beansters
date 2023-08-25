@@ -13,7 +13,7 @@
 ## Table of content
 
 - [User Experience](#user-experience)
-  - [Goal](#goal)
+  - [Goal](#goal) 
   - [Design](#design)
   - [User Stories](#user-stories)
   - [Features](#features)
@@ -236,25 +236,21 @@ Users have the option to delete their own posts. If they choose to do so a modal
 
 ### Validation
 
-HTML - No errors were returned when code was checked with the official [W3C validator](https://validator.w3.org/).
+HTML - No errors were returned when code was checked with the official [W3C validator](https://validator.w3.org/), save for one (error stray end tag <div> on the Home Page) but I beleive this is incorrect and is arising due to the use of block content.
 
-<image>
 
 CSS - No errors were returned when code was checked with the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/).
 
-<image>
 
 JAVASCRIPT - No errors were returned when code was checked with the official [JS Hint validator](https://jshint.com/).
 
-<image>
 
 PYTHON - No errors were shown when code was checked with the Code Institute Python Linter (https://pep8ci.herokuapp.com/).
 
-<image>
 
-Accessibility - I confirmed the code used is accessible by using lighthouse in devtools.
+Accessibility - I confirmed the code used is accessible by using lighthouse in devtools although at times performance dips into the 80s % but i beleive this may be due to poor internet connection.
 
-<image>
+
 
 ## TESTING
 
