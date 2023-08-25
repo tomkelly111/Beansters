@@ -24,6 +24,7 @@ span {
     color: #402E32 !important;
 }
 
+/* Buttons */
 .btn.btn-outline-secondary {
     color: #402E32 !important;
     border-color: #b8751e !important;
@@ -37,6 +38,7 @@ span {
     color: #402E32 !important;
 }
 
+/* Other */
 .main-content {
     flex: 1;
 }
@@ -83,6 +85,7 @@ span {
     object-fit: cover;
 }
 
+/* Footer */
 footer {
     background-color: #dbb999;
     padding: 20px 0;
