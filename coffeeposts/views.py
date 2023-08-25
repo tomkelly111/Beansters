@@ -29,6 +29,7 @@ class PostDetail(View):
                     "comment_form": CommentForm()
                 }
             )
+
     def post(self, request, shop, *args, **kwargs):
         queryset = CoffeeShopPost.objects
         post = get_object_or_404(queryset, shop=shop)
@@ -55,6 +56,7 @@ class PostDetail(View):
             }
         )
 
+
 @login_required
 def create_coffee_shop_post(request):
     if request.method == 'POST':
@@ -73,6 +75,7 @@ def create_coffee_shop_post(request):
         form = PostForm()
 
     return render(request, 'new_post.html', {'form': form})
+
 
 @login_required
 def edit_post(request, post_id):
@@ -93,6 +96,7 @@ def edit_post(request, post_id):
 
     return render(request, 'edit_post.html', {'form': form,
                   'post': post_to_edit})
+
 
 @login_required
 def delete_post(request, post_id):
