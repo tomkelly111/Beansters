@@ -245,10 +245,10 @@ CSS - No errors were returned when code was checked with the official [(Jigsaw) 
 JAVASCRIPT - No errors were returned when code was checked with the official [JS Hint validator](https://jshint.com/).
 
 
-PYTHON - No errors were shown when code was checked with the Code Institute Python Linter (https://pep8ci.herokuapp.com/).
+PYTHON - No errors were shown when code was checked with the Code Institute Python Linter (https://pep8ci.herokuapp.com/) save for 2 errors in settings.py where lines were too long.
 
 
-Accessibility - I confirmed the code used is accessible by using lighthouse in devtools although at times performance dips into the 80s % but i beleive this may be due to poor internet connection.
+Accessibility - I confirmed the code used is accessible by using lighthouse in devtools although at times performance dips into the 80s % but i believe this may be due to poor internet connection.
 
 
 
@@ -545,7 +545,7 @@ The website link was provided to 3 users all of whom were able to use the site e
 During testing an error was discovered whereby users could not sign up. This was due to formatting in the settings.py file where code was altered to fit on one line. This bug was resloved. 
 
 #### Remaining Bugs
-- none
+When a user leaves a comment a message appears saying their comment is awaiting approval. If they refresh the page the comment is submitted again. This will be addressed in the next iteration.
 
 ## Features to be Implemented
 When a user logs in to comment on a post they are brought to the homepage instead of back to the page they were viewing. This will be addressed during the next iteration so that the user is returned to the page they intended to comment on.
