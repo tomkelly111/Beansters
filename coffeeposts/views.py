@@ -29,7 +29,6 @@ class PostDetail(View):
                     "comment_form": CommentForm()
                 }
             )
-    @login_required
     def post(self, request, shop, *args, **kwargs):
         queryset = CoffeeShopPost.objects
         post = get_object_or_404(queryset, shop=shop)
