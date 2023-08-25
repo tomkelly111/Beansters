@@ -3,7 +3,7 @@
 
 {% block content %}
 {% load static %}
-
+<!-- Displays Search Results -->
 {% if searched %}
 <h1>You searched for {{ searched }}, here are your results:</h1>
 <div class="container">
@@ -56,6 +56,7 @@
         </div>
     </div>
     {% else %}
+    <!-- Display if no search results -->
     <h5> It looks like there are no results for {{ searched}}...</h5>
     <h5>Why not <a class="btn btn-outline-secondary btn-sm" href="{% url 'create_coffee_shop_post' %}"
             role="button">add a Coffee Shop</a> yourself?</h5>
@@ -64,6 +65,7 @@
 
 
 {% else %}
+<!-- Displays if page is accessed via URL instead of by searching -->
 <h1>Hey! you forgot to search for a shop...</h1>
 {% endif %}
 
