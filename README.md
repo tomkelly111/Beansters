@@ -7,6 +7,9 @@
 
 [Beansters](https://beansters-1fb9f50a5877.herokuapp.com/) is a website aimed at coffee lovers. User are able to search for coffee shops and read reviews. Users can then add their own review or comment. If a coffee shop is not listed on the site then a user can add a Coffee Shop Post and leave a review.
 
+![image](https://github.com/tomkelly111/Beansters/assets/111172617/224c2e80-55f9-4d6c-a77f-163d9a8773fb)
+
+
 ## Table of content
 
 - [User Experience](#user-experience)
@@ -81,26 +84,49 @@ Each post dispalys an image, the shop name, location, a short description and wh
 
 There is a search function which allows users to search for coffee shops. Results matching the search parameters will be displayed and if there are no available results users are given the option of adding a coffee shop themselves.
 
+![image](https://github.com/tomkelly111/Beansters/assets/111172617/5b128e80-06fe-4986-a41a-6a1cc0e4ee7b)
+
 #### Post Detail
 Once a user clicks "read reviews" on a post they are taken to the post detail view. Here they can see a full review of the coffee shop as made by the original poster. Here they will also be able to read comments which have been added by other users. If the user has logged in they will be able to add additional comments themselves.
 
+<img width="943" alt="image" src="https://github.com/tomkelly111/Beansters/assets/111172617/c6b509df-a59b-4645-8277-3af8a185d801">
+
 #### Add a Coffee Shop
-If users are logged in they have the option to add a coffee shop by clicking "Add a Coffee Shop" in the navbar. Once clicked the user is taken to a form where they can fill out the details of the coffee shop, provide a review and upload an image to accompany their post.
+If users are logged in they have the option to add a coffee shop by clicking "Add a Coffee Shop" in the navbar. Once clicked the user is taken to a form where they can fill out the details of the coffee shop, provide a review and upload an image to accompany their post. They can provide a location and a brief description as well as a star rating in order to provide a summary of their review.
+
+<img width="956" alt="image" src="https://github.com/tomkelly111/Beansters/assets/111172617/0d798b81-c678-4683-94c1-c90e06258cfc">
+
+#### Add a Comment or Review
+Logged in users can can add commnents to other users posts in order to make a comment on other's reviews or add their own review and star rating if they have visited that coffee shop themsleves.
+
+<img width="647" alt="image" src="https://github.com/tomkelly111/Beansters/assets/111172617/127db608-7f61-4e06-87d5-24a15ce0bf06">
 
 #### Register / Login
 Users have the ability to register or login. Once they have done so they have the ability to post reviews or add comments.
 
+
+<img width="377" alt="image" src="https://github.com/tomkelly111/Beansters/assets/111172617/767cbf50-9bf7-4d96-a482-5bb1b3776b34">
+
+
+<img width="603" alt="image" src="https://github.com/tomkelly111/Beansters/assets/111172617/d383e5bb-3036-44a9-9d79-1dd34bf80953">
+
 #### Confirmations
 The site offers users confirmations and feedback throughout to ensure the user knows what they are doing. There are confirmations for logging in, logging out, adding or editing a post (notifying the user that their post will appear once it has been approved) and adding a comment (same as for a post). When a user chooses to delete a post a modal will appear asking them if they are sure they want to delete as this cannot be undone.
+
+<img width="454" alt="image" src="https://github.com/tomkelly111/Beansters/assets/111172617/0f99d720-2841-49b5-9504-f348dd3c26fd">
 
 #### Search
 The site has a search function which allows users to search for coffee shops. Once a search is completed matching posts are displayed and the user can click in to read more. If there are no results, this is displayed and the user is invited to add the coffee shop themselves.
 
 
+<img width="686" alt="image" src="https://github.com/tomkelly111/Beansters/assets/111172617/66cd6ac7-4236-4ba0-a3bc-0d7731eea307">
+
+
+
 ## Functionality
 ### CRUD
 #### Create
-Users can add a coffee shop to the site. This is done via the use of a crispy form. They also have the option to add comments to a post which also uses crispy forms. Once this is done the post requires approval from the administrator. This is to ensure the quality of the content that is posted to the site.
+Users can add a coffee shop to the site. This is done via the use of a crispy form. They also have the option to add comments to a post which also uses crispy forms. Once this is done the post or comment requires approval from the administrator. This is to ensure the quality of the content that is posted to the site.
 
 #### Read
 Once a post is made it can be viewed on the homepage and if clicked into it can be seen in more detail. Here any comments that have been added can also be viewed.
@@ -515,7 +541,7 @@ During testing an error was discovered whereby users could not sign up. This was
 - none
 
 ## Features to be Implemented
-When a user logins to comment on a post they are brought to the homepage instead of back to the page they were viewing. This will be addressed during the next iteration so that the user is returned to the page they intended to comment on.
+When a user logs in to comment on a post they are brought to the homepage instead of back to the page they were viewing. This will be addressed during the next iteration so that the user is returned to the page they intended to comment on.
 
 When a user chooses to edit a post there is no way to cancel except for exiting the page. This will also be addressed in the next iteration.
 
@@ -566,6 +592,7 @@ import dj_database_url
 if os.path.isfile('env.py'):
 import env
 ```
+
 - Further down remove secret key provided by Django and instead reference key you chose in your env.py file as follows:  SECRET_KEY = os.environ.get('SECRET_KEY');
 - Next to hook up the database scroll down to database section in settings.py;
 - In place of the Database variable add the following:
