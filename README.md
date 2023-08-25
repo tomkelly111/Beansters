@@ -539,17 +539,86 @@ The following libraries and tools were used:
 ## DEPLOYMENT
 
 In order to deploy the website he following steps were followed:
+
+### Create App
 - From the Heroku dashboard, create a new app;
+  
+### Attach the PostgreSQL Database (Assumed to be using ElephantSQL.com)
+- Access ElephantSQL dashboard;
+- Click "Create New Instance";
+- Name your plan, select Tiny Turtle (free), leave Tags field blank;
+- Click "Select Region" and choose local data center (for me EU-West-1 (Ireland));
+- Click "Review";
+- Check details are correct and then click "Create Instance";
+- Return to dashboard and click on Database Instance Name for your project;
+- Copy database URL;
+  
+### Prepare environment and settings.py files
+- In workspace create env.py file (add to .gitignore file);
+- Add "Import os" to env.py;
+- Add a blank line, then set a DATABASE_URL variable, with the value copied from ElephantSQL as follows: os.environ["DATABASE_URL"]="<copiedURL>";
+- Add following text including your chosen secret key:  os.environ["SECRET_KEY"]="<your chosen secret key goes here between the quotes>";
+- Save the file;
+- Now to make your Django project aware of the env.py file, open settings.py and add the following below you Path import:
+```
+import os
+import dj_database_url
+if os.path.isfile('env.py'):
+import env
+```
+- Further down remove secret key provided by Django and instead reference key you chose in your env.py file as follows:  SECRET_KEY = os.environ.get('SECRET_KEY');
+- Next to hook up the database scroll down to database section in settings.py;
+- In place of the Database variable add the following:
+```
+  DATABASES = {
+     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+ 	}
+```
+- Save the file and run "python3 manage.py migrate";
+  
+### Set up Heroku Config Vars
 - Navigate to settings tab;
-- Create confg var with key "CREDS" and for  value copy and paste the contents of creds.json file - click add;
+- Create confg var with key "DATABASE_URL" and for  value copy and paste your database URL (for me this was from ElephantSQL);
+- Create config var with key "SECRET_KEY" and for value add your secret key "********" which is referenced in the settings.py file in your env.py file.
 - Create config var with key "PORT" and value "8000" - click add;
-- Next add buildpacks to install dependencies;
-- Click add buildpack and select python then save changes. Then select node.js and click save again;
-- Buildpacks must be in this order with python first and node.js second;
-- Next navigate to deploy tab;
-- Select github as deployment method, confirm connect to github;
-- Search for github repository and once found click connect; and
-- Enable automatic deployment to deploy.
+  
+### Get static and media files stored on Cloudinary
+- Create Cloudinary account;
+- At dashboard copy API Environment Variable URL;
+- Return to env.py file and add the following; os.environ["CLOUDINARY_URL"] = "<your cloudinary url minus "CLOUDINARY_URL=">";
+- Copy this value and return to Heroku;
+- Create a config var with key "CLOUDINARY_URL" and for the value add the URL you copied above;
+- Create config var with key "DISABLE_COLLECTSTATIC" and for value set as "1";
+- Return to settings.py file and to add in Cloudinary Libraries add "cloudinary_Storage" to the list of INSTALLED_APPS just above "django.contrib.staticfiles". Then add "cloudinary" underneath;
+- Towards end of settings.py add the following:
+```
+STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cludinary_storage.storage.MediaCloudinaryStorage'
+```
+
+### Tell Django where templates are stored
+- Under BASE_DIR add the following: TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates');
+- Scroll down midway and add "TEMPLATES_DIR" as the DIRS key in the TEMPALTES setting;
+
+### Add Heroku host name to Allowed Hosts
+- In settings.py add "<your heroku app name>.heroku.com", "local host" to ALLOWED_HOSTS
+
+### Tell Heroku how to run project
+- create a "Procfile;
+- Add the following to the file: web: gunicorn <your app name>.wsgi;
+- save files, add commit and push to repository;
+
+### Deployment
+- Return to Heroko;
+- Navigate to Deploy tab;
+- Select GitHub as deployment method;
+- search for your repository;
+- Scroll down and click "Deploy Branch";
+- If you like you can choose to enable automatic deploys;
 
 
 
