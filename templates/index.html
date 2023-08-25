@@ -9,10 +9,11 @@
     <div class="col-md-6 col-lg-4 p-3">
       <div class="card h-100">
         {% if "placeholder" in post.featured_image.url %}
-        <img class="card-img-top userimages"
+        <img class="card-img-top userimages" style="min-height: 300px; object-fit: cover;"
           src="{% static 'images/coffeedefault.jpg' %}" alt="Coffee Shop Picture">
         {% else %}
-        <img class="card-img-top userimages"  src=" {{ post.featured_image.url }}" alt="Coffee Shop Picture">
+        <img class="card-img-top userimages" style="min-height: 300px; object-fit: cover;" 
+        src=" {{ post.featured_image.url }}" alt="Coffee Shop Picture">
         {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{ post.shop }}</h5>
