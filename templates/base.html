@@ -16,6 +16,7 @@
 </head>
 
 <body>
+  <!-- Nav Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <span class="navbar-brand">Beansters</span>
@@ -35,7 +36,6 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'create_coffee_shop_post' %}">Add a Coffee Shop</a>
           </li>
-
           {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -48,6 +48,7 @@
           </li>
           {% endif %}
         </ul>
+        <!-- Search Bar -->
         <form class="d-flex" method=POST action="{% url 'search_shops' %}">
           {% csrf_token %}
 
@@ -82,6 +83,7 @@
     <!-- Content Goes here -->
     {% endblock content %}
   </div>
+  <!-- Footer -->
   <footer class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-md-4">
