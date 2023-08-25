@@ -50,7 +50,18 @@ It is inteded that once their is a community of coffee lovers additional functio
 The website was designed with simplicity in mind. There is minimal clutter with the focus being on the coffee shop posts themselves. The font [Quicksand](https://fonts.google.com/specimen/Quicksand) was chosen as it adds to the minimalist feel of the site. The color palette was take from [Color Space](https://mycolor.space/) and was chosen as it is reflective of the colors of coffee itself. The darker colors which appear when hovering over buttons representing espresso, the header and footer being reminiscent of the coffe & milk mixture of cappucinos while the beige body similar to that of foamed milk that tops them.
 
 ### User Stories
-Agile methodoligies were used to plan and design the website. User stories were created using issues on GitHub and were added  to two epics (milestones) the first for a minimal viable product and the second for additional functionality. The progress of these user stories were traked via the use of the GitHub kanban-board. While the first iteration (the MVP) was completed successfully, there are still items not completed on the second iteration. These will still be implemented but were not ready in time for the project deadline. It was decided in accordance with agile principles that scope would be amended rather than implemenmting all desired features at a lower quality.
+Agile methodoligies were used to plan and design the website. User stories were created using issues on GitHub and were added  to two epics (milestones) the first for a minimal viable product and the second for additional functionality. 
+
+<img width="502" alt="image" src="https://github.com/tomkelly111/Beansters/assets/111172617/346247e4-0f78-4847-88e7-4f0212ebc538">
+
+<img width="844" alt="image" src="https://github.com/tomkelly111/Beansters/assets/111172617/84149480-7ebc-4d09-8e98-0be850cccc19">
+
+
+The progress of these user stories were traked via the use of the GitHub kanban-board. 
+
+![image](https://github.com/tomkelly111/Beansters/assets/111172617/4517ab01-e40f-4ff1-baea-b28f505ef690)
+
+While the first iteration (the MVP) was completed successfully, there are still items not completed on the second iteration. These will still be implemented but were not ready in time for the project deadline. It was decided in accordance with agile principles that scope would be amended rather than implemenmting all desired features at a lower quality.
 
 
 #### Must Haves (Completed)
@@ -241,7 +252,7 @@ PYTHON - No errors were shown when code was checked with the Code Institute Pyth
 
 <image>
 
-Accessibility - I confirmed the code used is accessible by using lighthouse in devtools. [Poor performance]
+Accessibility - I confirmed the code used is accessible by using lighthouse in devtools.
 
 <image>
 
