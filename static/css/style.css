@@ -21,7 +21,7 @@ span {
 }
 
 .navbar-nav .nav-link:hover {
-    color: #402E32 !important;
+    color: #b8751e !important;
 }
 
 .btn.btn-outline-secondary {
@@ -30,6 +30,7 @@ span {
 }
 
 .btn.btn-outline-secondary:hover {
+    color: #b8751e !important;
     background-color: #402E32 !important;
 }
 
