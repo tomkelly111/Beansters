@@ -29,6 +29,10 @@ span {
     border-color: #b8751e !important;
 }
 
+.active {
+    font-style: oblique;
+}
+
 .btn.btn-outline-secondary:hover {
     color: #b8751e !important;
     background-color: #402E32 !important;
