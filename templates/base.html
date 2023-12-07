@@ -48,7 +48,7 @@
             <li class="nav-item {% if url_name == 'account_login' %}active{% endif %}">
               <a class="nav-link" href="{% url 'account_login' %}">Login</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" data-toggle="tooltip" title="Login or Register to add a Coffee Shop">
               <a class="nav-link disabled">Add a Coffee shop</a>
             </li>
             {% endif %}
@@ -116,6 +116,9 @@
       let alert = new bootstrap.Alert(messages);
       alert.close();
     }, 5000);
+    toolTip(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
   </script>
   {% block extras %}
 
