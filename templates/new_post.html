@@ -5,7 +5,7 @@
 {% load crispy_forms_tags %}
 
 {% if user.is_authenticated %}
-<form method="post" style="margin-top: 1.3em;" enctype="multipart/form-data">
+<form method="post" style="margin-top: 1.3em; margin-bottom: 1.3em;" enctype="multipart/form-data">
     {{ form | crispy }}
     {% csrf_token %}
 
