@@ -33,6 +33,10 @@ span {
     font-style: oblique;
 }
 
+.disabled {
+    color: #FFF8EA !important;
+}
+
 .btn.btn-outline-secondary:hover {
     color: #b8751e !important;
     background-color: #402E32 !important;
