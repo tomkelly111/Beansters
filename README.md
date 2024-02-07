@@ -1,15 +1,4 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-...............................................
-# Resubmission Updates
-- CRUD functionality has been implemented, a bug due to an error in naming variables has been fixed. This initially caused a 500 server error when a user tried to delete a post. Users can now delete posts successfully.
-- A Favicon has been added to the site.
-- Items such as the footer icons have had the css altered so they now change color when hovered over.
-- The Nav Bar has been updated so that the current page the user is on is in italics.
-- Bottom Margins have been added to the "Add Coffee Shop", "Login" and "Sign Up" pages for better UX design.
-- A tooltip has been added when a user hovers over a link which is not accessible unless logged in, additionally the color of the inaccessible links has been changed to differentiate them from the other links.
-
-
 ...............................................
 # [Beansters](https://beansters-1fb9f50a5877.herokuapp.com/)
 
@@ -552,7 +541,14 @@ The website link was provided to 3 users all of whom were able to use the site e
 
 ### Bugs
 #### Solved Bugs
-During testing an error was discovered whereby users could not sign up. This was due to formatting in the settings.py file where code was altered to fit on one line. This bug was resloved. 
+- During testing an error was discovered whereby users could not sign up. This was due to formatting in the settings.py file where code was altered to fit on one line. This bug was resloved. 
+- CRUD functionality has been implemented, a bug due to an error in naming variables has been fixed. This initially caused a 500 server error when a user tried to delete a post. Users can now delete posts successfully.
+- A Favicon has been added to the site.
+- Items such as the footer icons have had the css altered so they now change color when hovered over.
+- The Nav Bar has been updated so that the current page the user is on is in italics.
+- Bottom Margins have been added to the "Add Coffee Shop", "Login" and "Sign Up" pages for better UX design.
+- A tooltip has been added when a user hovers over a link which is not accessible unless logged in, additionally the color of the inaccessible links has been changed to differentiate them from the other links.
+
 
 #### Remaining Bugs
 When a user leaves a comment a message appears saying their comment is awaiting approval. If they refresh the page the comment is submitted again. This will be addressed in the next iteration.
